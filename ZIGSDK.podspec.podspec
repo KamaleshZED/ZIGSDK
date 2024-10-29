@@ -1,15 +1,23 @@
 Pod::Spec.new do |spec|
   spec.name         = "ZIGSDK"
-  spec.version      = "0.0.1"
-  spec.summary      = "A short description of ZIGSDK.podspec."
-  spec.description  = "A short description of ZIGSDK.podspec."
+  spec.version      = "1.0.1"
+  spec.summary      = "ZIG SDK for ticket validation"
+  spec.description  = "This SDK includes ticket validation, toll validation, and user notifications with various functionalities for ticket management."
   spec.homepage     = "https://github.com/KamaleshZED/ZIGSDK"
-  spec.license      = "MIT (example)"
-  spec.author             = { "KamaleshZED" => "kamalesh@zed.digital" }
-  spec.source       = { :git => "https://github.com/KamaleshZED/ZIGSDK.git", :tag => "#{spec.version}" }
-  spec.platform 
-  spec.source_files  = "MainClass/**/*.{h,m}"
-  spec.exclude_files = "Classes/Exclude"
-  # spec.dependency "JSONKit", "~> 1.4"
-
+  spec.license      = { :type => 'MIT', :file => 'LICENSE' }
+  spec.author             = { "Kamalesh" => "kamalesh@zed.digital" }
+  spec.source       = { :git => "https://github.com/KamaleshZED/ZIGSDK.git", :tag => "1.0.1" }
+  spec.ios.deployment_target = '13.0'
+  spec.source_files = 'SwiftFramework/**/*.swift', 'MainClasses/**/*.swift'
+  spec.resources     = [
+    "ZIGSDK", "Resource/Assets.xcassets",
+    "ZIGSDK", "Resource/**/*.storyboard",
+    "ZIGSDK", "Resource/**/*.xib"
+                       ]
+  spec.swift_version = '5.0'
+  spec.dependency 'Alamofire'
+  spec.dependency 'CocoaMQTT'
+  spec.dependency 'Realm'
+  spec.dependency 'RealmSwift'
+  spec.dependency 'MqttCocoaAsyncSocket'
 end
